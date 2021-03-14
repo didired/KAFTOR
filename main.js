@@ -4,11 +4,13 @@ var audio = document.getElementById("sound");
 var isStart = true;
 
 body.style.backgroundImage = "url('Click Screen.jpg')";
-
-body.addEventListener('click', function () {
+first.style.display = "none";
+body.addEventListener('click', function (e) {
 	if (isStart) {
 		body.style.backgroundImage = "url('first.jpg')";
 		isStart = false;
+		first.style.display = "block";
+		e.stopPropagation();
 	}
 });
 
