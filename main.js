@@ -10,8 +10,15 @@ body.addEventListener('click', function (e) {
 		body.style.backgroundImage = "url('first.jpg')";
 		isStart = false;
 		first.style.display = "block";
-		e.stopPropagation();
+	} else {
+		if (stop) {
+			stop = false;
+			isStart = true;
+			body.style.backgroundImage = "url('Click Screen.jpg')";
+		}
 	}
+	e.stopPropagation();
+
 });
 
 var stop = false;
@@ -30,11 +37,13 @@ first.addEventListener('mouseout', function() {
 	}
 });
 
-first.addEventListener('click', function() {
+first.addEventListener('click', function(e) {
 	if (!isStart) {
 		audio.pause();
 		body.style.backgroundImage = "url('fine.gif')";
 		stop = true;
+		first.style.display = "none";
+		e.stopPropagation();
 	}
 });
 
