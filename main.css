@@ -6,12 +6,13 @@ html {
     height: 100%;
     background-repeat:no-repeat;
    	background-size:cover;
-    /*overflow-x: hidden;*/
+    overflow: hidden;
 }
 
 #first {
-  width: 600px;
-  height: 200px;
-  transform: translate(30vw, 40vh);
+  width: 500px;
+  height: 100px;
+  transform: translate(30vw, 50vh);
+  cursor: pointer;
 
 }
